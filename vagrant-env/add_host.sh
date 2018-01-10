@@ -10,17 +10,18 @@ source ${CONF_vagrant_dir}/provision_public_config.sh
 #
 
 # host <project> in ../progects/<project>/public to be linked in Apache
-ADD_HOST_NAME=mymissinghost.local
+ADD_HOST_NAME=$1
 
 # database name to be created
-ADD_DATABASE_NAME=mydatabase
+ADD_DATABASE_NAME=$2
 
 # database dump file to be imported
-ADD_DATABASE_FILE=mop.app_db.sql
-
+ADD_DATABASE_FILE=$2.sql
 
 
 mkayTitle "Configuring apache..."
+mkay "Creating directory /var/www/${ADD_HOST_NAME}/public"
+mkdir -p /var/www/${ADD_HOST_NAME}/public
 mkay "Website directories into ${CONF_apache_vhosts_file}"
 VHOST=$(cat <<EOF
 <VirtualHost *:80>
@@ -85,3 +86,5 @@ mkayTitle "Installation is done."
 mkay "New available site on IP: http://192.168.157.55/"
 mkay " - http://${ADD_HOST_NAME}/"
 mkay "MySQL is available on port 3306 with username '${DATABASE_USER}' and password '${DATABASE_PASSWORD}'"
+
+

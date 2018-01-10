@@ -126,8 +126,9 @@ mkayTitle "Installing phpMyAdmin..."
 mkay "installing: https://files.phpmyadmin.net/phpMyAdmin/$(echo ${CONF_phpmyadmin_version}| cut -d'-' -f 2)/${CONF_phpmyadmin_version}.tar.gz"
 wget -k -nv https://files.phpmyadmin.net/phpMyAdmin/$(echo ${CONF_phpmyadmin_version}| cut -d'-' -f 2)/${CONF_phpmyadmin_version}.tar.gz
 sudo tar -xzf ${CONF_phpmyadmin_version}.tar.gz -C /var/www/phpmyadmin.local
-sudo rm ${CONF_phpmyadmin_version}.tar.gz
-sudo mv /var/www/phpmyadmin.local/${CONF_phpmyadmin_version}/ /var/www/phpmyadmin.local/public
+#sudo rm ${CONF_phpmyadmin_version}.tar.gz
+sudo mv ${CONF_phpmyadmin_version}.tar.gz /var/www/phpmyadmin.local/${CONF_phpmyadmin_version}.tar.gz
+sudo mv -v /var/www/phpmyadmin.local/${CONF_phpmyadmin_version}/* /var/www/phpmyadmin.local/public/
 sudo rm -rf /var/www/phpmyadmin.local/${CONF_phpmyadmin_version}
 
 
@@ -252,3 +253,5 @@ for site in ${HOSTS_ARRAY[@]}; do
     mkay " - http://${site}/"
 done
 mkay "MySQL is available on port 3306 with username '${DATABASE_USER}' and password '${DATABASE_PASSWORD}'"
+
+

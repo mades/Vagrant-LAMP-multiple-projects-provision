@@ -16,3 +16,5 @@ for db in $databases; do
         gzip ${CONF_vagrant_sql_export_dir}/`date +%Y%m%d%H`.$db.sql
     fi
 done
+
+

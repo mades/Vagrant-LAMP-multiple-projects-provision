@@ -19,3 +19,4 @@ mkay() {
 	echo -e " * Mkay, $1 * "
 }
 
+

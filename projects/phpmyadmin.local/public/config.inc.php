@@ -44,9 +44,9 @@ $cfg['Servers'][$i]['AllowNoPassword'] = true;
 $cfg['Servers'][$i]['controlhost'] = 'localhost';
 $cfg['Servers'][$i]['controlport'] = '';
 $cfg['Servers'][$i]['user'] = 'root';
-$cfg['Servers'][$i]['password'] = '';
+$cfg['Servers'][$i]['password'] = 'password';
 //$cfg['Servers'][$i]['controluser'] = 'root';
-//$cfg['Servers'][$i]['controlpass'] = '';
+//$cfg['Servers'][$i]['controlpass'] = 'password';
 
 
 $i++;

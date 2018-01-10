@@ -26,5 +26,3 @@ declare -a DATABASE_NAMES_ARRAY=(
 # - sql/import/<AnyName>.<DatabaseName>.sql.gz
 
 
-
-
