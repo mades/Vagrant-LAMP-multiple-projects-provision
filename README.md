@@ -1,7 +1,7 @@
 # Vagrant LAMP multiple projects provision
 Vagrant Apache MySQL PHP7 multiple projects provision
 
-##Hosts settings
+## Hosts settings
 Add to `hosts`:
 ```
 192.168.157.55 app.local
@@ -21,9 +21,16 @@ Clone current git repository
 git clone https://github.com/madeS/Vagrant-LAMP-multiple-projects-provision.git .
 ```
 
-Move to `vagrant-env` dirrectory and up provision
+Move to `vagrant-env` dirrectory
 ```bash
 cd ./vagrant-env/
+```
+Provision use triggers for export SQL before machine has been destroyed. So, we need install special plugin
+```bash
+vagrant plugin install vagrant-triggers
+```
+Create and up provision to machine
+```bash
 vagrant up
 ```
 
