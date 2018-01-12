@@ -95,4 +95,4 @@ rm -rf /var/www/laravel_example.local/public
 composer create-project --prefer-dist laravel/laravel .
 ```
 
-Enjoy!
+**Enjoy!**
