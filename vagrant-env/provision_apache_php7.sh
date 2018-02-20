@@ -139,7 +139,30 @@ mkayTitle "Configuring PHP..."
 a2enconf php${CONF_php_version}-fpm
 sudo service apache2 reload
 
-#TODO install xdebug
+
+mkayTitle "Installing XDebug..."
+sudo apt-get install php-xdebug
+
+XDEBUGCONF=$(cat <<EOF
+xdebug.remote_enable = On
+xdebug.remote_port = 9001
+xdebug.remote_handler = "dbgp"
+xdebug.remote_host = "10.0.2.2"
+;xdebug.idekey = "IDEDEBUG"
+xdebug.remote_autostart = On
+;xdebug.remote_connect_back = 1
+;xdebug.remote_log = "/var/www/xdebug.log"
+xdebug.profiler_enable = 0
+;xdebug.profiler_output_dir = "/var/www/"
+;xdebug.profiler_append = 1
+;xdebug.profiler_enable_trigger = 1
+;xdebug.profiler_output_name = "xdebug.out.%t"
+EOF
+)
+# request_terminate_timeout = 3600 for nginx
+echo "${XDEBUGCONF}" | sudo tee -a ${CONF_xdebug_config_file}
+
+sudo service apache2 reload
 
 mkay "done."
 
