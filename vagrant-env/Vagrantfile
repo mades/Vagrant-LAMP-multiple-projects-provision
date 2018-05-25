@@ -35,6 +35,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.provision :shell, path: "provision_apache_php7.sh"
   
+  config.trigger.after :up do |trigger|
+    trigger.info = "Restarting apache2..."
+    trigger.run_remote = {inline: "sudo service apache2 restart"}
+  end
+
   config.trigger.before :destroy do |trigger|
     trigger.info = "Dumping the database before destroying the VM..."
     trigger.run_remote = {inline: "test -f /var/env/before_destroy.sh && bash /var/env/before_destroy.sh"}

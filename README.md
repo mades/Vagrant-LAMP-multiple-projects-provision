@@ -25,10 +25,6 @@ Move to `vagrant-env` dirrectory
 ```bash
 cd ./vagrant-env/
 ```
-Provision use triggers for export SQL before machine has been destroyed. So, we need install special plugin
-```bash
-vagrant plugin install vagrant-triggers
-```
 Create and up provision to machine
 ```bash
 vagrant up
