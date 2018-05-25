@@ -35,8 +35,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.provision :shell, path: "provision_apache_php7.sh"
   
-  config.trigger.before :destroy, :force => true do
-    info "Dumping the database before destroying the VM..."
-    run_remote  "test -f /var/env/before_destroy.sh && bash /var/env/before_destroy.sh"
+  config.trigger.before :destroy do |trigger|
+    trigger.info = "Dumping the database before destroying the VM..."
+    trigger.run_remote = {inline: "test -f /var/env/before_destroy.sh && bash /var/env/before_destroy.sh"}
   end
 end
