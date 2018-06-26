@@ -264,6 +264,9 @@ done
 mkay "Restart it..."
 sudo service mysql restart
 
+sudo chmod +x /var/env/add_host.sh
+sudo chmod +x /var/env/before_destroy.sh 
+
 mkay "done."
 
 
