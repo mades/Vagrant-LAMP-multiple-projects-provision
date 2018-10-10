@@ -157,7 +157,7 @@ xdebug.profiler_output_dir = "/var/www/"
 xdebug.profiler_append = 1
 xdebug.profiler_enable_trigger = 1
 xdebug.profiler_enable_trigger_value = "1"
-xdebug.profiler_output_name = "xdebug.profile.%u_%H%R"
+xdebug.profiler_output_name = "xdebug.%H%R.profile"
 EOF
 )
 # request_terminate_timeout = 3600 for nginx
