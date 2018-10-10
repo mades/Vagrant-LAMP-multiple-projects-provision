@@ -152,11 +152,12 @@ xdebug.remote_host = "10.0.2.2"
 xdebug.remote_autostart = On
 ;xdebug.remote_connect_back = 1
 ;xdebug.remote_log = "/var/www/xdebug.log"
-xdebug.profiler_enable = 0
-;xdebug.profiler_output_dir = "/var/www/"
-;xdebug.profiler_append = 1
-;xdebug.profiler_enable_trigger = 1
-;xdebug.profiler_output_name = "xdebug.out.%t"
+xdebug.profiler_enable = 1
+xdebug.profiler_output_dir = "/var/www/"
+xdebug.profiler_append = 1
+xdebug.profiler_enable_trigger = 1
+;XDEBUG_PROFILE
+xdebug.profiler_output_name = "xdebug.out.%t"
 EOF
 )
 # request_terminate_timeout = 3600 for nginx
