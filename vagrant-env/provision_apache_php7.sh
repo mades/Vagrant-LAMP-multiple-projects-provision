@@ -15,7 +15,7 @@ mkayTitle "Configuring Locale..."
 export LANGUAGE=en_US.UTF-8
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
-locale-gen en_US.UTF-8
+sudo locale-gen en_US.UTF-8
 sudo dpkg-reconfigure -f noninteractive locales
 mkay "done."
 
@@ -37,6 +37,19 @@ sudo apt-get -y install ngrok
 # sudo apt-get -y install unixodbc memcached sendmail
 # sudo apt-get -y install rabbitmq-server redis-server
 sudo apt-get -y install python-software-properties software-properties-common
+mkay "done."
+
+
+
+
+mkayTitle "Installing Docker..."
+sudo apt install apt-transport-https ca-certificates curl software-properties-common
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
+sudo apt update
+#apt-cache policy docker-ce
+sudo apt install -y docker-ce
+#sudo systemctl status docker
 mkay "done."
 
 
